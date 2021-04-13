@@ -9,7 +9,7 @@
 
       <div>
         <ul>
-          <TodoListIem v-for="(todoItem, index) in todoItems" 
+          <TodoListItem v-for="(todoItem, index) in todoItems" 
           :key="index" 
           :index="index" 
           :todoItem="todoItem" 
@@ -25,10 +25,9 @@
 </template>
 
 <script lang="ts">
-import { component } from "node_modules/vue/types/umd";
 import Vue from "vue";
 import TodoInput from "./components/TodoInput.vue";
-import TodoListIem from "./components/TodoListIem.vue";
+import TodoListItem from "./components/TodoListItem.vue";
 
 const STORAGE_KEY = "vue-todo-ts-v5";
 const storage = {
@@ -49,7 +48,7 @@ export interface Todo {
 }
 
 export default Vue.extend({
-  components: { TodoInput, TodoListIem },
+  components: { TodoInput, TodoListItem },
   data() {
     return {
       todoText: "",
